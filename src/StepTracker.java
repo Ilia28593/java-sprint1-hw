@@ -11,19 +11,19 @@ public class StepTracker {
     }
 
     public void addSteps(Integer month, Integer day, Integer steps) {
-        Data.setStat(month,day,steps);
+        BaseSteps.setStat(month,day,steps);
     }
 
     public Integer CurrentSteps(Integer month) {
-        Dto monthName = Data.getStat().get(month);
+        WorkingInfo monthName = BaseSteps.getStat().get(month);
         return monthName.getStepsByDay().values().stream().reduce(0,Integer ::sum);
     }
 
     public Integer getStepInDay(Integer month, Integer day) {
-       return Data.getStat().get(month).getStepsByDay().get(day);
+       return BaseSteps.getStat().get(month).getStepsByDay().get(day);
     }
 
     public String getMonthName(Integer month) {
-        return Data.getStat().get(month).getMonth().name();
+        return BaseSteps.getStat().get(month).getMonth().name();
     }
 }

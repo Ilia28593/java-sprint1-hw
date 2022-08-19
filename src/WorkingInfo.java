@@ -1,13 +1,16 @@
 import java.util.HashMap;
 import java.util.Objects;
 
-public class Dto {
+public class WorkingInfo {
     private final MonthEnum month;
     private final HashMap<Integer, Integer> stepsByDay;
 
-    public Dto(MonthEnum month, Integer day, Integer steps) {
+    public WorkingInfo(MonthEnum month, Integer day, Integer steps) {
         this.month = month;
         HashMap<Integer,Integer> putMap = new HashMap<>();
+        for (int i = 0; i < 31; i++) {
+            putMap.put(i,0);
+        }
         putMap.put(day,steps);
         this.stepsByDay = putMap;
     }
