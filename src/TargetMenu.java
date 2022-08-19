@@ -24,6 +24,7 @@ public class TargetMenu {
                 Integer sum = stepTracker.CurrentSteps(numberMonth);
                 System.out.printf("За %s месяц вы прошли %d шагов.%n", stepTracker.getMonthName(numberMonth), sum);
                 System.out.printf("В среднем %s шагов в день.%n", (sum / 30));
+                Converter(sum);
                 break;
             }
             case 4: {
@@ -71,5 +72,20 @@ public class TargetMenu {
             }
         }
         return numberDay;
+    }
+    private static void Converter(Integer step){
+        int calory = step * 50;
+        int Kcalory = 0;
+        if(calory>1000){
+            Kcalory = calory/1000;
+        }
+        System.out.printf("Вы сожгли %s Калорий или %s КилоКалории.%n",calory,Kcalory);
+        int distance = (step*75)/1000;
+        double endDistance = (step*75)%1000;
+        if (distance==1){
+            System.out.printf("Вы прошли %s километр %s сантиметра.%n", distance,endDistance);
+        }else{
+            System.out.printf("Вы прошли %s километр %s сантиметра.%n", distance,endDistance);
+        }
     }
 }
