@@ -9,5 +9,6 @@ public class Dto {
 
     public void setStepsByDay(HashMap<Integer, Integer> stepsByDay) {
         this.stepsByDay = stepsByDay;
+
     }
 }
