@@ -1,11 +1,11 @@
 import java.util.HashMap;
 import java.util.Objects;
 
-public class WorkingInfo {
+public class workingInfo {
     private final MonthEnum month;
     private final HashMap<Integer, Integer> stepsByDay;
 
-    public WorkingInfo(MonthEnum month, Integer day, Integer steps) {
+    public workingInfo(MonthEnum month, Integer day, Integer steps) {
         this.month = month;
         HashMap<Integer,Integer> putMap = new HashMap<>();
         for (int i = 0; i < 31; i++) {
@@ -15,7 +15,7 @@ public class WorkingInfo {
         this.stepsByDay = putMap;
     }
 
-    public void setDayAndRecordSteps(Integer day, Integer steps){
+    public void seеStepByDay(Integer day, Integer steps){
         Integer stepInDay = stepsByDay.get(day);
         if(Objects.nonNull(stepInDay)){
             stepsByDay.put(day,stepInDay+steps);
