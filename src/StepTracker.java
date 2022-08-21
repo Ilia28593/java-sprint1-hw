@@ -33,7 +33,7 @@ public class StepTracker {
     static void staticStepsMonth() {
         Integer numberMonth = choMonth();
         Integer sum = currentSteps(numberMonth);
-        System.out.printf("За %s месяц вы прошли %d шагов.%n", getMonthName(numberMonth), sum);
+        System.out.printf("За %s месяц вы прошли %d шагов.%n", MonthEnum.valueOf(getMonthName(numberMonth)).getValue(), sum);
         Integer bestSteps = getStepInDay(numberMonth, 1);
         int bestDay = 0;
         for (int i = 2; i < 30; i++) {
@@ -56,7 +56,7 @@ public class StepTracker {
     public static void staticMonth() {
         Integer numberMonth = choMonth();
         Integer sum = currentSteps(numberMonth);
-        System.out.printf("За %s месяц вы прошли %d шагов.%n", getMonthName(numberMonth), sum);
+        System.out.printf("За %s месяц вы прошли %d шагов.%n", MonthEnum.valueOf(getMonthName(numberMonth)).getValue(), sum);
         System.out.printf("В среднем %s шагов в день.%n", (sum / 30));
         staticConverter(sum);
     }

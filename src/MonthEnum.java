@@ -1,24 +1,25 @@
 public enum MonthEnum {
-    JANUARY(1),
-    FEBRUARY(2),
-    MARCH(3),
-    APRIL(4),
-    MAY(5),
-    JUNE(6),
-    JULY(7),
-    AUGUST(8),
-    SEPTEMBER(9),
-    OCTOBER(10),
-    NOVEMBER(11),
-    DECEMBER(12);
+    JANUARY("Январь"),
+    FEBRUARY("Февраль"),
+    MARCH("Март"),
+    APRIL("Апрель"),
+    MAY("Май"),
+    JUNE("Июнь"),
+    JULY("Июль"),
+    AUGUST("Август"),
+    SEPTEMBER("Сентябрь"),
+    OCTOBER("Октябрь"),
+    NOVEMBER("Ноябрь"),
+    DECEMBER("Декабрь");
 
-        private final int value;
+        private final String value;
 
-        MonthEnum(int value) {
+        MonthEnum(String value) {
                 this.value=value;
         }
-        public int getValue() {
+        public String getValue() {
                 return value;
         }
-        //немного не понимаю зачем реализовывать эти значения
+        //немного переработал ваш вариант, я так понимаю чтобы получать номер месяца по значению
+        // Так теперь выводится руский язык, месяцев, если что могу и ваш вариант сделать
 }
