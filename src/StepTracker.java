@@ -27,7 +27,7 @@ public class StepTracker {
     }
 
     public static String getMonthName(Integer month) {
-        return BaseSteps.getStat().get(month).getMonth().name();
+        return MonthEnum.getMonth(month);
     }
 
     static void staticStepsMonth() {
@@ -59,6 +59,25 @@ public class StepTracker {
         System.out.printf("За %s месяц вы прошли %d шагов.%n", MonthEnum.valueOf(getMonthName(numberMonth)).getValue(), sum);
         System.out.printf("В среднем %s шагов в день.%n", (sum / 30));
         staticConverter(sum);
+        bestSeria(numberMonth);
+
+    }
+    public static void bestSeria (Integer numberMonth){
+        int confim = 0;
+        int bestDay = 0;
+        for (int i = 1; i <= 30; i++) {
+            if (goal < getStepInDay(numberMonth, i)) {
+                bestDay++;
+            } else if (bestDay>confim) {
+                confim=bestDay;
+                bestDay=0;
+            }
+        }
+        if (confim<5) {
+            System.out.printf("Самая длинная серия за месяц %s длилась дня.%n", confim);
+        } else {
+            System.out.printf("Самая длинная серия за месяц %s длилась дней.%n", confim);
+        }
     }
 
     public static void goal() {

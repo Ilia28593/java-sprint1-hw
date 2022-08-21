@@ -28,7 +28,4 @@ public class workingInfo {
         return stepsByDay;
     }
 
-    public MonthEnum getMonth() {
-        return month;
-    }
 }
